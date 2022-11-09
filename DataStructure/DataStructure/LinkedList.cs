@@ -32,6 +32,23 @@ namespace DataStructure
             Console.WriteLine($"\n{data} inserted into Queue");
         }
 
+        public void Dequeue()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("\nQueue is Empty");
+                return;
+            }
+            Node temp = this.head;
+            this.head = this.tail.next;
+
+            if (this.head == null)
+            {
+                this.tail = null;
+            }
+            Console.WriteLine($"\n{temp.data} deleted from Queue");
+        }
+
         public void Display()
         {
             int size = 0;
