@@ -28,7 +28,28 @@ namespace DataStructure
                 objNode.next = head;
             }
             head = objNode;
-            Console.WriteLine($"{data} pushed to Stack");
+            Console.WriteLine($"\n{data} pushed to Stack");
+        }
+
+        public void Peek()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("\nNot Possible");
+                return;
+            }
+            Console.WriteLine($"\n{head.data} is on top of the Stack");
+        }
+
+        public void Pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("\nNot Possible");
+                return;
+            }
+            Console.WriteLine($"\nPopped {head.data}");
+            head = head.next;
         }
 
         public void Display()

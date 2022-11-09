@@ -10,6 +10,11 @@
             objList.Push(56);
             objList.Push(30);
             objList.Push(70);
+            objList.Peek();
+            objList.Pop();
+            objList.Display();
+            objList.Peek();
+            objList.Pop();
             objList.Display();
         }
     }
