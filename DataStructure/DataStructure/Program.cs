@@ -7,14 +7,9 @@
             Console.WriteLine("Welcome to Stack and Queue Problem");
 
             LinkedList objList = new LinkedList(); 
-            objList.Push(56);
-            objList.Push(30);
-            objList.Push(70);
-            objList.Peek();
-            objList.Pop();
-            objList.Display();
-            objList.Peek();
-            objList.Pop();
+            objList.Enqueue(56);
+            objList.Enqueue(30);
+            objList.Enqueue(70);
             objList.Display();
         }
     }

@@ -10,46 +10,26 @@ namespace DataStructure
     public class LinkedList
     {
         public Node head;
+        public Node tail;
 
         public LinkedList()
         {
-            this.head = null;
+            this.head = this.tail = null;
         }
 
-        public void Push(int data)
+        public void Enqueue(int data)
         {
             Node objNode = new Node(data);
-            if (head == null)
+            if (this.tail == null)
             {
-                objNode.next = null;
+                this.head = this.tail = objNode;
             }
             else
             {
-                objNode.next = head;
+                this.tail.next = objNode;
+                this.tail = objNode;
             }
-            head = objNode;
-            Console.WriteLine($"\n{data} pushed to Stack");
-        }
-
-        public void Peek()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("\nNot Possible");
-                return;
-            }
-            Console.WriteLine($"\n{head.data} is on top of the Stack");
-        }
-
-        public void Pop()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("\nNot Possible");
-                return;
-            }
-            Console.WriteLine($"\nPopped {head.data}");
-            head = head.next;
+            Console.WriteLine($"\n{data} inserted into Queue");
         }
 
         public void Display()
@@ -58,17 +38,17 @@ namespace DataStructure
             Node temp = head;
             if (temp == null)
             {
-                Console.WriteLine("\nStack is empty");
+                Console.WriteLine("\nQueue is empty");
                 return;
             }
-            Console.Write("\nLinked List => ");
+            Console.Write("\nQueue => ");
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
                 size++;
             }
-            Console.WriteLine("\nTotal Elements in Stack: " + size);
+            Console.WriteLine("\nTotal Elements in Queue: " + size);
         }
     }
 }
